@@ -89,7 +89,7 @@ export class AuthController {
 
     user.resetToken = null;
     user.resetTokenExpires = null;
-    user.refreshToken = null; // logout all sessions
+    user.refreshToken = null;
 
     await user.save();
 

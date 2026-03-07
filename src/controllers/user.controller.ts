@@ -1,10 +1,6 @@
 import { Request, Response } from "express";
 import { UserService } from "../services/user.service";
 import User from "../database/models/user.model";
-import {
-  accessCookieOptions,
-  refreshCookieOptions,
-} from "../utils/cookieOptions";
 
 export class UserController {
   private static userService = new UserService();
@@ -18,6 +14,7 @@ export class UserController {
 
       res.cookie("accessToken", accessToken);
       res.cookie("refreshToken", refreshToken);
+    
 
       res.json({ message: "Signup successful", user });
     } catch (err: any) {
