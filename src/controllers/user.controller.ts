@@ -9,6 +9,7 @@ export class UserController {
     try {
       const { name, email, password } = req.body;
 
+      
       const { user, accessToken, refreshToken } =
         await UserController.userService.signup(name, email, password);
 
